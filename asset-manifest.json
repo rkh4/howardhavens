@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/howardhavens/static/css/main.5f361e03.chunk.css",
+    "main.js": "/howardhavens/static/js/main.fe7f9ba3.chunk.js",
+    "main.js.map": "/howardhavens/static/js/main.fe7f9ba3.chunk.js.map",
+    "runtime-main.js": "/howardhavens/static/js/runtime-main.8a98c75e.js",
+    "runtime-main.js.map": "/howardhavens/static/js/runtime-main.8a98c75e.js.map",
+    "static/js/2.44352c30.chunk.js": "/howardhavens/static/js/2.44352c30.chunk.js",
+    "static/js/2.44352c30.chunk.js.map": "/howardhavens/static/js/2.44352c30.chunk.js.map",
+    "index.html": "/howardhavens/index.html",
+    "precache-manifest.34d06968dfd40a589d6b2182aa0a12e5.js": "/howardhavens/precache-manifest.34d06968dfd40a589d6b2182aa0a12e5.js",
+    "service-worker.js": "/howardhavens/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/howardhavens/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.44352c30.chunk.js.LICENSE.txt": "/howardhavens/static/js/2.44352c30.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/howardhavens/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8a98c75e.js",
+    "static/js/2.44352c30.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.fe7f9ba3.chunk.js"
+  ]
+}
