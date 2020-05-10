@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5e7b3bd381d2a65d1a452a516c17efb5",
+    "revision": "c4ad3f36bc01553eb111f0be31788cba",
     "url": "/howardhavens/index.html"
   },
   {
-    "revision": "8e282fa99793a92e412d",
-    "url": "/howardhavens/static/css/main.5ecd60fb.chunk.css"
+    "revision": "8ffad84a9bf905f6ff00",
+    "url": "/howardhavens/static/css/main.ffded7e8.chunk.css"
   },
   {
-    "revision": "555079b194089f9391ca",
-    "url": "/howardhavens/static/js/2.c4831526.chunk.js"
+    "revision": "428ccd28ba78511825f6",
+    "url": "/howardhavens/static/js/2.333000d4.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/howardhavens/static/js/2.c4831526.chunk.js.LICENSE.txt"
+    "url": "/howardhavens/static/js/2.333000d4.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8e282fa99793a92e412d",
-    "url": "/howardhavens/static/js/main.883a9cba.chunk.js"
+    "revision": "8ffad84a9bf905f6ff00",
+    "url": "/howardhavens/static/js/main.d7a896bc.chunk.js"
   },
   {
     "revision": "592f61e26f2b718b77c8",
     "url": "/howardhavens/static/js/runtime-main.8a98c75e.js"
+  },
+  {
+    "revision": "02b221503579fff4830d113c50114b56",
+    "url": "/howardhavens/static/media/downArrow.02b22150.svg"
   },
   {
     "revision": "b078b5b93d7c60fdf6265f6102adea5d",
