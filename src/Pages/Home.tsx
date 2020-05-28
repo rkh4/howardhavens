@@ -13,6 +13,7 @@ const LandingSection = styled(Section)`
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: calc(100% + 42px);
+    background-position-x: center;
 
     @media(max-width: 1200px) {
         background-position-y: initial;
