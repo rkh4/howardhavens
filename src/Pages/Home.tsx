@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
-import scrollComponent from '../scrollComponent.svg';
+import scrollComponent from '../scrollComponent.png';
 import HeaderBar from '../Shared/HeaderBar';
 
 interface sectionProps {
@@ -51,15 +51,15 @@ const MainText = styled.div`
     top: 10%;
     width: 100%;
     line-height: 110px;
-    
-    div {display: inline;}
+    display: flex;
+    justify-content: space-around;
 
-    @media(max-width: 900px) {
+
+    @media(max-width: 1060px) {
         font-weight: 300;
         font-size: 11vw;
         line-height: 120px;
-
-        div { display: inline-block; }
+        flex-direction: column;
     }
 `;
 
@@ -75,7 +75,7 @@ const MainLogo = styled.div`
     top: 34%;
     left: 37.8%;
 
-    @media(max-width: 900px) {
+    @media(max-width: 1060px) {
         width: 50%;
         height:50%;
         top: 36%;
