@@ -46,17 +46,23 @@ const MainText = styled.div`
     position: absolute;
     font-size: 8vw;
     letter-spacing: 20px;
+    text-indent: 20px;
     text-align: center;
     top: 10%;
     width: 100%;
     line-height: 110px;
+    
+    div {display: inline;}
 
     @media(max-width: 900px) {
         font-weight: 300;
         font-size: 11vw;
         line-height: 120px;
+
+        div { display: inline-block; }
     }
 `;
+
 
 const MainLogo = styled.div`
     background-image: url(${logoWhite});
@@ -102,7 +108,10 @@ const Home: React.FC = () => {
         <LandingSection>
             <filter />
             <MainLogo />
-            <MainText>HOWARD HAVENS</MainText>
+            <MainText>
+                <div>HOWARD</div>
+                <div>HAVENS</div>
+            </MainText>
             <ScrollArrow href="#intro"/>
         </LandingSection>
         <Section dark id="intro">
