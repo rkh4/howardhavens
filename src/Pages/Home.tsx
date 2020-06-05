@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
 import scrollComponent from '../scrollComponent.svg';
@@ -25,17 +25,16 @@ const LandingSection = styled(Section)`
         background: #6A6A6A;
         opacity: 0.45;
         top: 0;
-        bottom: 0;
         right: 0;
         left: 0;
-        
+        height: 100vh;
     }
 `;
 
 
 const MainText = styled.div`
     color: white;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat';  
     font-weight: 200;
     position: absolute;
     font-size: 8vw;
@@ -71,6 +70,12 @@ const MainLogo = styled.div`
     }
 `;
 
+const bounce = keyframes`
+    0% { transform: translate(0,0); }
+    25% { transform: translate(0, -25px); }
+    50% { transform: translate(0,0); }
+`;
+
 const ScrollArrow = styled.a`
     background-image: url(${scrollComponent});
     background-size: 100%;
@@ -81,11 +86,7 @@ const ScrollArrow = styled.a`
     position: absolute;
     bottom: 10px;
     left: calc(50% - 40px);
-
-    &:hover {
-        transition: all 0.3s ease;
-        /* transform: translate(0, -10px) scale(1.1); */
-    }
+    animation: ${bounce} 1s infinite;
 `;
 
 const Home: React.FC = () => {
@@ -94,7 +95,8 @@ const Home: React.FC = () => {
         <LandingSection>
             <filter />
             <MainLogo />
-            <MainText>HOWARD HAVENS</MainText>
+            {/* <MainText>HOWARD HAVENS</MainText> */}
+            <MainText>||||||||||||||||||||||||||||| |||||||||||||||||||||</MainText>
             <ScrollArrow href="#section2"/>
         </LandingSection>
         <Section id="section2">
