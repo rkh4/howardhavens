@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5d13d7d268668fb16ab2b0ec2e79d895",
+    "revision": "ea32309ab998dd02d4f283142e0144ce",
     "url": "/howardhavens/index.html"
   },
   {
-    "revision": "a80d50158bfb09aaa2a1",
+    "revision": "0d7806d1d8379a5229f4",
     "url": "/howardhavens/static/css/main.27df9120.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/howardhavens/static/js/2.b71cebcd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a80d50158bfb09aaa2a1",
-    "url": "/howardhavens/static/js/main.2f533da3.chunk.js"
+    "revision": "0d7806d1d8379a5229f4",
+    "url": "/howardhavens/static/js/main.6b2638a2.chunk.js"
   },
   {
     "revision": "592f61e26f2b718b77c8",
@@ -30,9 +30,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7de22b224084795fa2f4e34b2ec5a3a9",
     "url": "/howardhavens/static/media/logoWhite.7de22b22.svg"
-  },
-  {
-    "revision": "649bff672cc6732e3f64047409115ada",
-    "url": "/howardhavens/static/media/scrollComponent.649bff67.svg"
   }
 ]);
