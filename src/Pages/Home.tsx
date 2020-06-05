@@ -3,9 +3,16 @@ import styled, { keyframes } from 'styled-components';
 import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
 import scrollComponent from '../scrollComponent.svg';
+import HeaderBar from '../Shared/HeaderBar';
+
+interface sectionProps {
+    dark?: boolean;
+}
 
 const Section = styled.div`
     height: 100vh;
+    background: ${(p: sectionProps) => p.dark ? "#000" : "initial"};
+    color: ${(p: sectionProps) => p.dark ? "#fff" : "initial"};
 `;
 
 const LandingSection = styled(Section)`
@@ -95,12 +102,11 @@ const Home: React.FC = () => {
         <LandingSection>
             <filter />
             <MainLogo />
-            {/* <MainText>HOWARD HAVENS</MainText> */}
-            <MainText>||||||||||||||||||||||||||||| |||||||||||||||||||||</MainText>
-            <ScrollArrow href="#section2"/>
+            <MainText>HOWARD HAVENS</MainText>
+            <ScrollArrow href="#intro"/>
         </LandingSection>
-        <Section id="section2">
-          Test
+        <Section dark id="intro">
+          <HeaderBar />
         </Section>
     </>
     );
