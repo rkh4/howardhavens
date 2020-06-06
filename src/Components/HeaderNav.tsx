@@ -35,6 +35,7 @@ const HeaderNav: React.FC = () => {
     return (
         <HeaderNavContainer>
             {/* <img src={logo} alt="Howard Havens Logo" /> */}
+            <HeaderButton>ABOUT</HeaderButton>
             <HeaderButton>LETTINGS</HeaderButton>
             <HeaderButton>DEAL SOURCING</HeaderButton>
             <HeaderButton>ABOUT US</HeaderButton>
