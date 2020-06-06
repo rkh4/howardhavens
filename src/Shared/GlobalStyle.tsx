@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { colours } from '../Shared/SharedStyles';
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -14,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #E78200;
+        background: ${colours.orange};
         border-radius: 20px;
     }
 `;

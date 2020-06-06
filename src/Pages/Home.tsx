@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
 import scrollComponent from '../scrollComponent.png';
-import HeaderBar from '../Shared/HeaderBar';
+import HeaderNav from '../Components/HeaderNav';
 
 interface sectionProps {
     dark?: boolean;
@@ -115,7 +115,7 @@ const Home: React.FC = () => {
             <ScrollArrow href="#intro"/>
         </LandingSection>
         <Section dark id="intro">
-          <HeaderBar />
+          <HeaderNav />
         </Section>
     </>
     );
