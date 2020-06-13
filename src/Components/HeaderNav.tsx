@@ -53,12 +53,52 @@ const NavItemsRightContainer = styled.div`
     }
 `;
 
+const Burger = styled.div`
+    height: 5px;
+    width: 40px;
+    background: white;
+    transition: all 0.5s ease;
+    transition-property: height, width;
+    position: absolute;
+    top: calc(50% - 2.5px);
+    left: calc(50% - 20px);
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        width: 40px;
+        background: inherit;
+        margin-top: -10px;
+    }
+
+    &:after {
+        margin-top: 10px;
+    }
+`;
+
+
+const BurgerContainer = styled.div`
+    height: 100px;
+    width: 100px;
+    background: red;
+    position: relative;
+    align-self: flex-end;
+    margin-right: 20px;
+
+    &:hover > ${Burger} {
+        background: ${colours.orange};
+    }
+`;
+
+
 
 const HeaderNav: React.FC = () => {
     return (
         <HeaderNavContainer>
             <img src={logoWhite} alt="Howard Havens Logo" />
             <NavItemsRightContainer>
+                <BurgerContainer><Burger /></BurgerContainer>
                 <HeaderButton>ABOUT US</HeaderButton>
                 <HeaderButton>LETTINGS</HeaderButton>
                 <HeaderButton>DEAL SOURCING</HeaderButton>
