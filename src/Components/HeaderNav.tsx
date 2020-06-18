@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logoWhite from '../logoWhite.svg';
 import styled from 'styled-components';
 import { colours } from '../Shared/SharedStyles';
+
+interface menuProps {
+    menuOpen? : boolean;
+}
 
 const HeaderNavContainer = styled.div`
     width: 100%;
@@ -11,6 +15,7 @@ const HeaderNavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 
     & > img {
         height: 60px;
@@ -26,7 +31,7 @@ const HeaderButton = styled.button`
     border: none;
     letter-spacing: 5px;
     text-indent: 5px;
-    padding: 30px 25px;
+    padding: 42px 25px;
     cursor: pointer;
     
     &:hover {
@@ -41,14 +46,22 @@ const HeaderButton = styled.button`
 const NavItemsRightContainer = styled.div`
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
 
     @media( max-width: 1100px ) {
         flex-direction: column;
         align-self: flex-start;
+        margin-top: 100px;
+        transition: all 0.3s ease;
+        height: ${(p:menuProps) => p.menuOpen ? "595px" : "0"};
 
         ${HeaderButton} {
-            background: red;
+            display: initial;
             margin-right: 20px;
+            text-align: right;
+            border-radius: 0;
+            background: #1f1f1f;
         }
     }
 `;
@@ -58,22 +71,30 @@ const Burger = styled.div`
     width: 40px;
     background: white;
     transition: all 0.5s ease;
-    transition-property: height, width;
+    transition-property: height, width, transform;
     position: absolute;
     top: calc(50% - 2.5px);
     left: calc(50% - 20px);
+    transform: ${(p: menuProps) => p.menuOpen ? "rotate(180deg)" : ""};
+
 
     &:before, &:after {
         content: '';
         position: absolute;
         height: 5px;
         width: 40px;
-        background: inherit;
+        background: ${(p: menuProps) => p.menuOpen ? colours.orange : "inherit"};
+        transition: transform 0.5s ease;
+    }
+
+    &:before {
         margin-top: -10px;
+        transform: ${(p: menuProps) => p.menuOpen ? "translateY(10px) rotate(45deg)" : ""};
     }
 
     &:after {
         margin-top: 10px;
+        transform: ${(p: menuProps) => p.menuOpen ? "translateY(-10px) rotate(-45deg)" : ""};
     }
 `;
 
@@ -81,24 +102,35 @@ const Burger = styled.div`
 const BurgerContainer = styled.div`
     height: 100px;
     width: 100px;
-    background: red;
+    background: ${(p: menuProps) => p.menuOpen ? "#1f1f1f" : "transparent"};
     position: relative;
     align-self: flex-end;
-    margin-right: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    display: none;
 
     &:hover > ${Burger} {
         background: ${colours.orange};
+    }
+
+    @media( max-width: 1100px ) {
+        display: initial;
+
     }
 `;
 
 
 
 const HeaderNav: React.FC = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <HeaderNavContainer>
             <img src={logoWhite} alt="Howard Havens Logo" />
-            <NavItemsRightContainer>
-                <BurgerContainer><Burger /></BurgerContainer>
+            <NavItemsRightContainer menuOpen={menuOpen}>
+                <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
                 <HeaderButton>ABOUT US</HeaderButton>
                 <HeaderButton>LETTINGS</HeaderButton>
                 <HeaderButton>DEAL SOURCING</HeaderButton>
