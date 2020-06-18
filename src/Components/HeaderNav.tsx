@@ -77,6 +77,7 @@ const Burger = styled.div`
     top: calc(50% - 12.5px);
     left: calc(50% - 20px);
     transform: ${(p: menuProps) => p.menuOpen ? "translateY(10px) rotate(45deg)" : ""};
+    border-radius: 4px;
 
     &:before, &:after {
         content: '';
@@ -85,6 +86,7 @@ const Burger = styled.div`
         width: 40px;
         background: ${(p: menuProps) => p.menuOpen ? colours.orange : "inherit"};
         transition: transform 0.5s ease, opacity 0.5s ease;
+        border-radius: 4px;
     }
 
     &:before {
