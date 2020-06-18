@@ -54,7 +54,7 @@ const NavItemsRightContainer = styled.div`
         align-self: flex-start;
         margin-top: 100px;
         transition: all 0.3s ease;
-        height: ${(p:menuProps) => p.menuOpen ? "595px" : "0"};
+        height: ${(p:menuProps) => p.menuOpen ? "400px" : "0"};
 
         ${HeaderButton} {
             display: initial;
@@ -62,6 +62,7 @@ const NavItemsRightContainer = styled.div`
             text-align: right;
             border-radius: 0;
             background: #1f1f1f;
+            padding: 0 25px;
         }
     }
 `;
@@ -69,14 +70,13 @@ const NavItemsRightContainer = styled.div`
 const Burger = styled.div`
     height: 5px;
     width: 40px;
-    background: white;
+    background: ${(p: menuProps) => p.menuOpen ? colours.orange : "#fff"};
     transition: all 0.5s ease;
     transition-property: height, width, transform;
     position: absolute;
-    top: calc(50% - 2.5px);
+    top: calc(50% - 12.5px);
     left: calc(50% - 20px);
-    transform: ${(p: menuProps) => p.menuOpen ? "rotate(180deg)" : ""};
-
+    transform: ${(p: menuProps) => p.menuOpen ? "translateY(10px) rotate(45deg)" : ""};
 
     &:before, &:after {
         content: '';
@@ -84,17 +84,18 @@ const Burger = styled.div`
         height: 5px;
         width: 40px;
         background: ${(p: menuProps) => p.menuOpen ? colours.orange : "inherit"};
-        transition: transform 0.5s ease;
+        transition: transform 0.5s ease, opacity 0.5s ease;
     }
 
     &:before {
-        margin-top: -10px;
-        transform: ${(p: menuProps) => p.menuOpen ? "translateY(10px) rotate(45deg)" : ""};
+        margin-top: 10px;
+        transform: ${(p: menuProps) => p.menuOpen ? "translateY(-10px) rotate(180deg)" : ""};
+        opacity: ${(p: menuProps) => p.menuOpen ? "0" : "1"};
     }
 
     &:after {
-        margin-top: 10px;
-        transform: ${(p: menuProps) => p.menuOpen ? "translateY(-10px) rotate(-45deg)" : ""};
+        margin-top: 20px;
+        transform: ${(p: menuProps) => p.menuOpen ? "translateY(-20px) rotate(-90deg)" : ""};
     }
 `;
 
