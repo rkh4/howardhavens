@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
@@ -10,12 +10,13 @@ interface sectionProps {
 }
 
 const Section = styled.div`
-    height: 100vh;
+    height: 2000px;
     background: ${(p: sectionProps) => p.dark ? "#000" : "initial"};
     color: ${(p: sectionProps) => p.dark ? "#fff" : "initial"};
 `;
 
-const LandingSection = styled(Section)`
+const LandingSection = styled.div`
+    height: 100vh;
     background-image: url(${house1});
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,6 +104,14 @@ const ScrollArrow = styled.a`
 `;
 
 const Home: React.FC = () => {
+    const [stickyHeader, setStickyHeader] = useState(false);
+    
+    window.addEventListener('scroll', () => {
+        setStickyHeader(window.scrollY > window.innerHeight);
+        console.log("Scroll", window.scrollY > window.innerHeight);
+        console.log("stickyHeader", stickyHeader);
+    });
+
     return (
     <>
         <LandingSection>
@@ -116,6 +125,8 @@ const Home: React.FC = () => {
         </LandingSection>
         <Section dark id="intro">
           <HeaderNav />
+          About us  
+
         </Section>
     </>
     );
