@@ -106,14 +106,13 @@ const ScrollArrow = styled.a`
 const Home: React.FC = () => {
     const [stickyHeader, setStickyHeader] = useState(false);
     
-    window.addEventListener('scroll', () => {
-        setStickyHeader(window.scrollY > window.innerHeight);
-        console.log("Scroll", window.scrollY > window.innerHeight);
-        console.log("stickyHeader", stickyHeader);
+    window.addEventListener("scroll", () => {
+        window.pageYOffset > window.innerHeight ? setStickyHeader(true) : setStickyHeader(false);
     });
 
     return (
     <>
+        <HeaderNav stickyHeader={stickyHeader} />
         <LandingSection>
             <filter />
             <MainLogo />
@@ -124,9 +123,7 @@ const Home: React.FC = () => {
             <ScrollArrow href="#intro"/>
         </LandingSection>
         <Section dark id="intro">
-          <HeaderNav />
           About us  
-
         </Section>
     </>
     );

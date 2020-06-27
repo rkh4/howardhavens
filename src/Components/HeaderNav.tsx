@@ -15,11 +15,19 @@ const HeaderNavContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
+    top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
+    background: #333;
+    z-index: 1;
+    transition: height 0.3s ease;
 
     & > img {
         height: 60px;
         margin-left: 50px;
+    }
+
+    @media(min-width: 1800px) {
+        left: calc(50% - 900px);    
     }
 `;
 
@@ -124,13 +132,15 @@ const BurgerContainer = styled.div`
     }
 `;
 
+interface IProps {
+    stickyHeader?: boolean;
+}
 
-
-const HeaderNav: React.FC = () => {
+const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
-
+    
     return (
-        <HeaderNavContainer>
+        <HeaderNavContainer stickyHeader={stickyHeader}>
             <img src={logoWhite} alt="Howard Havens Logo" />
             <NavItemsRightContainer menuOpen={menuOpen}>
                 <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
