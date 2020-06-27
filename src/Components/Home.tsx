@@ -13,6 +13,10 @@ const Section = styled.div`
     height: 2000px;
     background: ${(p: sectionProps) => p.dark ? "#000" : "initial"};
     color: ${(p: sectionProps) => p.dark ? "#fff" : "initial"};
+
+    &#intro {
+        padding-top: 70px;
+    }
 `;
 
 const LandingSection = styled.div`

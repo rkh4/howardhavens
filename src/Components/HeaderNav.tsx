@@ -139,6 +139,8 @@ interface IProps {
 const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
     
+    
+
     return (
         <HeaderNavContainer stickyHeader={stickyHeader}>
             <img src={logoWhite} alt="Howard Havens Logo" />
