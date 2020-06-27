@@ -11,13 +11,13 @@ const HeaderNavContainer = styled.div`
     width: 100%;
     max-width: 1800px;
     margin: auto;
-    height: 100px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: ${(p: IProps) => p.stickyHeader ? "fixed" : "absolute"};
     top: ${(p: IProps) => p.stickyHeader ? "0" : "100vh"};
-    background: #333;
+    background: #000;
     z-index: 1;
     transition: height 0.3s ease;
 
@@ -39,7 +39,7 @@ const HeaderButton = styled.button`
     border: none;
     letter-spacing: 5px;
     text-indent: 5px;
-    padding: 42px 25px;
+    padding: 27px 25px;
     cursor: pointer;
     
     &:hover {
@@ -60,7 +60,7 @@ const NavItemsRightContainer = styled.div`
     @media( max-width: 1100px ) {
         flex-direction: column;
         align-self: flex-start;
-        margin-top: 100px;
+        margin-top: 70px;
         transition: all 0.3s ease;
         height: ${(p:menuProps) => p.menuOpen ? "400px" : "0"};
 
@@ -111,7 +111,7 @@ const Burger = styled.div`
 
 
 const BurgerContainer = styled.div`
-    height: 100px;
+    height: 70px;
     width: 100px;
     background: ${(p: menuProps) => p.menuOpen ? "#1f1f1f" : "transparent"};
     position: relative;
