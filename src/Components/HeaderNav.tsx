@@ -32,6 +32,10 @@ const HeaderNavContainer = styled.div`
     }
 `;
 
+const Logo = styled.img`
+    cursor: pointer;
+`;
+
 
 const HeaderButton = styled.button`
     height: 100%;
@@ -149,10 +153,10 @@ const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
 
     return (
         <HeaderNavContainer stickyHeader={stickyHeader}>
-            <img src={logoWhite} alt="Howard Havens Logo" />
+            <Logo src={logoWhite} alt="Howard Havens Logo" onClick={() => handleNav("")} />
             <NavItemsRightContainer menuOpen={menuOpen}>
                 <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
-                <HeaderButton onClick={() => handleNav("about")}>ABOUT US</HeaderButton>
+                <HeaderButton onClick={() => handleNav("#about")}>ABOUT US</HeaderButton>
                 <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton>
                 <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton>
                 <HeaderButton onClick={() => handleNav("projects")}>PROJECTS</HeaderButton>

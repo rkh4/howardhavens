@@ -124,9 +124,9 @@ const Home: React.FC = () => {
                 <div>HOWARD</div>
                 <div>HAVENS</div>
             </MainText>
-            <ScrollArrow href="#intro"/>
+            <ScrollArrow href="#about"/>
         </LandingSection>
-        <Section dark id="intro">
+        <Section dark id="about">
           About us  
         </Section>
     </>

@@ -1,10 +1,14 @@
 import React from "react";
 import { PageContainer } from "../Shared/SharedStyles";
+import HeaderNav from "./HeaderNav";
 
 
 const DealSourcing: React.FC = () => {
   return (
-    <PageContainer>Deal Sourcing</PageContainer>
+    <PageContainer>
+        <HeaderNav stickyHeader />
+        Deal Sourcing
+    </PageContainer>
   );
 };
 
