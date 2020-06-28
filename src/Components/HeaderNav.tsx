@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logoWhite from '../logoWhite.svg';
 import styled from 'styled-components';
 import { colours } from '../Shared/SharedStyles';
+import { useHistory } from 'react-router-dom';
 
 interface menuProps {
     menuOpen? : boolean;
@@ -139,18 +140,23 @@ interface IProps {
 const HeaderNav: React.FC<IProps> = ({ stickyHeader }: IProps) => {
     const [menuOpen, setMenuOpen] = useState(false);
     
-    
+    const history = useHistory();
+
+    const handleNav = (link: string): void => {
+        console.log("clicked nav", link);
+        history.push(`/howardhavens/${link}`);
+    }
 
     return (
         <HeaderNavContainer stickyHeader={stickyHeader}>
             <img src={logoWhite} alt="Howard Havens Logo" />
             <NavItemsRightContainer menuOpen={menuOpen}>
                 <BurgerContainer menuOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><Burger menuOpen={menuOpen} /></BurgerContainer>
-                <HeaderButton>ABOUT US</HeaderButton>
-                <HeaderButton>LETTINGS</HeaderButton>
-                <HeaderButton>DEAL SOURCING</HeaderButton>
-                <HeaderButton>OTHER SECTION</HeaderButton>
-                <HeaderButton>CONTACT</HeaderButton>
+                <HeaderButton onClick={() => handleNav("about")}>ABOUT US</HeaderButton>
+                <HeaderButton onClick={() => handleNav("lettings")}>LETTINGS</HeaderButton>
+                <HeaderButton onClick={() => handleNav("dealsourcing")}>DEAL SOURCING</HeaderButton>
+                <HeaderButton onClick={() => handleNav("projects")}>PROJECTS</HeaderButton>
+                <HeaderButton onClick={() => handleNav("contact")}>CONTACT</HeaderButton>
             </NavItemsRightContainer>
         </HeaderNavContainer>
     );
