@@ -23,7 +23,7 @@ const HeaderNavContainer = styled.div`
     transition: height 0.3s ease;
 
     & > img {
-        height: 60px;
+        height: 50px;
         margin-left: 50px;
     }
 
