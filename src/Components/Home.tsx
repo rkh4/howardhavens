@@ -15,7 +15,7 @@ interface sectionProps {
 export const Section = styled.div`
     background: ${(p: sectionProps) => p.dark ? "#000" : "inherit"};
     background: ${(p: sectionProps) => p.background};
-    color: ${(p: sectionProps) => p.dark ? "#fff" : "inherit"};
+    color: ${(p: sectionProps) => p.dark ? colours.white : "inherit"};
     padding: 50px;
     display: flex;
     align-items: center;
@@ -56,7 +56,7 @@ const LandingSection = styled.div`
 `;
 
 const SectionHeader = styled.h1`
-    color: #fff;
+    color: ${colours.white};
     border-bottom: 1px solid ${colours.orange};
     letter-spacing: 5px;
     font-weight: 300;
