@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/howardhavens/static/css/main.27df9120.chunk.css",
-    "main.js": "/howardhavens/static/js/main.2872df7d.chunk.js",
-    "main.js.map": "/howardhavens/static/js/main.2872df7d.chunk.js.map",
+    "main.js": "/howardhavens/static/js/main.8b7c6aa6.chunk.js",
+    "main.js.map": "/howardhavens/static/js/main.8b7c6aa6.chunk.js.map",
     "runtime-main.js": "/howardhavens/static/js/runtime-main.8a98c75e.js",
     "runtime-main.js.map": "/howardhavens/static/js/runtime-main.8a98c75e.js.map",
-    "static/js/2.241c6c07.chunk.js": "/howardhavens/static/js/2.241c6c07.chunk.js",
-    "static/js/2.241c6c07.chunk.js.map": "/howardhavens/static/js/2.241c6c07.chunk.js.map",
+    "static/js/2.8a0750eb.chunk.js": "/howardhavens/static/js/2.8a0750eb.chunk.js",
+    "static/js/2.8a0750eb.chunk.js.map": "/howardhavens/static/js/2.8a0750eb.chunk.js.map",
     "index.html": "/howardhavens/index.html",
-    "precache-manifest.fc375923646863a30602d5a0d4d5d6cf.js": "/howardhavens/precache-manifest.fc375923646863a30602d5a0d4d5d6cf.js",
+    "precache-manifest.657fe588565f8f246547777a679eecd0.js": "/howardhavens/precache-manifest.657fe588565f8f246547777a679eecd0.js",
     "service-worker.js": "/howardhavens/service-worker.js",
     "static/css/main.27df9120.chunk.css.map": "/howardhavens/static/css/main.27df9120.chunk.css.map",
-    "static/js/2.241c6c07.chunk.js.LICENSE.txt": "/howardhavens/static/js/2.241c6c07.chunk.js.LICENSE.txt",
+    "static/js/2.8a0750eb.chunk.js.LICENSE.txt": "/howardhavens/static/js/2.8a0750eb.chunk.js.LICENSE.txt",
     "static/media/house1.jpeg": "/howardhavens/static/media/house1.42a310fa.jpeg",
     "static/media/logoWhite.svg": "/howardhavens/static/media/logoWhite.7de22b22.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8a98c75e.js",
-    "static/js/2.241c6c07.chunk.js",
+    "static/js/2.8a0750eb.chunk.js",
     "static/css/main.27df9120.chunk.css",
-    "static/js/main.2872df7d.chunk.js"
+    "static/js/main.8b7c6aa6.chunk.js"
   ]
 }
