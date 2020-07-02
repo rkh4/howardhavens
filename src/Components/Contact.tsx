@@ -1,14 +1,19 @@
 import React from "react";
-import { PageContainer } from "../Shared/SharedStyles";
-import HeaderNav from "./HeaderNav";
+import styled from "styled-components";
+import { Section } from "./Home";
+import { colours } from "../Shared/SharedStyles";
 
+const Container = styled.div`
+  background: ${colours.orange};
+`;
 
 const Contact: React.FC = () => {
   return (
-    <PageContainer>
-        <HeaderNav stickyHeader />
-        Contact
-    </PageContainer>
+    <Section background={colours.orange}>
+        <Container>
+          Contact
+        </Container>
+    </Section>
   );
 };
 

@@ -4,18 +4,30 @@ import house1 from '../house1.jpeg';
 import logoWhite from '../logoWhite.svg';
 import scrollComponent from '../scrollComponent.png';
 import HeaderNav from '../Components/HeaderNav';
+import { colours } from '../Shared/SharedStyles';
+import Contact from './Contact';
 
 interface sectionProps {
     dark?: boolean;
+    background?: string;
 }
 
-const Section = styled.div`
-    height: 2000px;
-    background: ${(p: sectionProps) => p.dark ? "#000" : "initial"};
-    color: ${(p: sectionProps) => p.dark ? "#fff" : "initial"};
+export const Section = styled.div`
+    background: ${(p: sectionProps) => p.dark ? "#000" : "inherit"};
+    background: ${(p: sectionProps) => p.background};
+    color: ${(p: sectionProps) => p.dark ? "#fff" : "inherit"};
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    &#about {
+        padding-top: 130px;
+    }
 
-    &#intro {
-        padding-top: 70px;
+    @media(min-width: 1800px) {
+        width: 1700px;
+        margin: auto;
     }
 `;
 
@@ -41,6 +53,15 @@ const LandingSection = styled.div`
         left: 0;
         height: 100vh;
     }
+`;
+
+const SectionHeader = styled.h1`
+    color: #fff;
+    border-bottom: 1px solid ${colours.orange};
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-size: 1.7em;
+    text-transform: uppercase;
 `;
 
 
@@ -127,8 +148,14 @@ const Home: React.FC = () => {
             <ScrollArrow href="#about"/>
         </LandingSection>
         <Section dark id="about">
-          About us  
+            <SectionHeader>Who we are</SectionHeader>
+            Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
         </Section>
+        <Section dark>
+            <SectionHeader>What we do</SectionHeader>
+            Lorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk important words ghjfdklg hdisg fdsjkgLorem ipsum jfkldsjfklds fklds fjklsdfj kldsfj sdlfjsdk lfds jaghsjk ghdfjkgl shjgk;dsh jggkldfsh jgahfjdk ghjfdklg hdisg fdsjkg
+        </Section>
+        <Contact />
     </>
     );
 };

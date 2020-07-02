@@ -4,6 +4,8 @@ import { colours } from '../Shared/SharedStyles';
 const GlobalStyle = createGlobalStyle`
     html {
         scroll-behavior: smooth;
+        background: #000;
+        color: #fff;
     }
 
     ::-webkit-scrollbar {
