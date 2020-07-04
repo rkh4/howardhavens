@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Section } from "./Home";
 import { colours } from "../Shared/SharedStyles";
+import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -62,6 +63,10 @@ const Column = styled.div`
   }
 `;
 
+interface FormItemProps {
+  doubleHeight?: boolean;
+}
+
 const FormItem = styled.input`
     width: 100%;
     height: 50px;
@@ -71,6 +76,18 @@ const FormItem = styled.input`
     margin-bottom: 20px;
     box-sizing: border-box;
     padding: 0 20px;
+`;
+
+const MultiLineForm = styled.textarea`
+  width: 100%;
+  height: 120px;
+  background: ${colours.white};
+  border: 0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 18px 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
 `;
 
 const SubmitButton = styled.input`
@@ -100,23 +117,38 @@ const Icon = styled.div`
   margin: 7px 15px 0px;
 `;
 
-const handleFormSubmit = (event: any) => {
-  event.preventDefalut();
-  const data = new FormData(event.target);
-  console.dir(data);
+interface formProps {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
 }
 
 const Contact: React.FC = () => {
-
+  
   function handleSubmit(event: any) {
     event.preventDefault();
     const data = new FormData(event.target);
     
     let newObject: any = {};
     data.forEach((value, key) => {newObject[key] = value});
+    
+    //Not currently used - for future API integration
     let json = JSON.stringify(newObject);
-
     console.dir(json);
+
+    window.open(
+      `mailto:contact@howardhavens.co.uk
+        ?subject=HowardHavens.co.uk Inquiry: ${newObject.subject}
+        &body=%0D%0A
+        Name: ${newObject.name}%0D%0A
+        Email: ${newObject.email}%0D%0A
+        Phone: ${newObject.phone}%0D%0A%0D%0A
+        Subject: ${newObject.subject}%0D%0A
+        Message: ${newObject.message}`, 
+        '_blank'
+    );
   }
 
 
@@ -154,7 +186,7 @@ const Contact: React.FC = () => {
 
             <Column>
               <FormItem placeholder="Subject" name="subject" />
-              <FormItem placeholder="Your Message" name="message" />
+              <MultiLineForm placeholder="Your Message" name="message"></MultiLineForm>
             </Column>
             <SubmitButton type="submit" value="SUBMIT" />
           </FormContainer>
