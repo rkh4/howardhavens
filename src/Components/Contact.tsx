@@ -45,6 +45,53 @@ const Link = styled.div`
   }
 `;
 
+const FormContainer = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+`;
+
+const Column = styled.div`
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  @media(max-width: 1000px) {
+    width: 100%;
+  }
+`;
+
+const FormItem = styled.input`
+    width: 100%;
+    height: 50px;
+    background: ${colours.white};
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0 20px;
+`;
+
+const SubmitButton = styled.input`
+  width: 300px;
+  height: 50px;
+  border-radius: 30px;
+  border: 3px solid #fff;
+  background: transparent;
+  letter-spacing: 6px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 44px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover {
+    background: ${colours.white};
+    color: ${colours.orange};
+  }
+`;
+
 const Icon = styled.div`
   width: 50px;
   height: 50px;
@@ -53,7 +100,26 @@ const Icon = styled.div`
   margin: 7px 15px 0px;
 `;
 
+const handleFormSubmit = (event: any) => {
+  event.preventDefalut();
+  const data = new FormData(event.target);
+  console.dir(data);
+}
+
 const Contact: React.FC = () => {
+
+  function handleSubmit(event: any) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    
+    let newObject: any = {};
+    data.forEach((value, key) => {newObject[key] = value});
+    let json = JSON.stringify(newObject);
+
+    console.dir(json);
+  }
+
+
   return (
     <Section background={colours.orange}>
         <Container>
@@ -78,6 +144,21 @@ const Contact: React.FC = () => {
               Contact@howardhavens.co.uk
             </Link>
           </LinksContainer>
+
+          <FormContainer onSubmit={handleSubmit}>
+            <Column>
+              <FormItem placeholder="Name" name="name" />
+              <FormItem placeholder="Email" name="email" />
+              <FormItem placeholder="Phone (optional)" name="phone" />
+            </Column>
+
+            <Column>
+              <FormItem placeholder="Subject" name="subject" />
+              <FormItem placeholder="Your Message" name="message" />
+            </Column>
+            <SubmitButton type="submit" value="SUBMIT" />
+          </FormContainer>
+
         </Container>
     </Section>
   );
