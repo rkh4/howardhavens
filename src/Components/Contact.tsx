@@ -51,6 +51,10 @@ const FormContainer = styled.form`
   flex-wrap: wrap;
   justify-content: center;
   width: 70%;
+
+  @media(max-width: 1100px) {
+    width: 95%;
+  }
 `;
 
 const Column = styled.div`
@@ -58,7 +62,7 @@ const Column = styled.div`
   padding: 0 20px;
   box-sizing: border-box;
 
-  @media(max-width: 1000px) {
+  @media(max-width: 1100px) {
     width: 100%;
   }
 `;
@@ -140,7 +144,7 @@ const Contact: React.FC = () => {
 
     window.open(
       `mailto:contact@howardhavens.co.uk
-        ?subject=HowardHavens.co.uk Inquiry: ${newObject.subject}
+        ?subject=${newObject.subject}
         &body=%0D%0A
         Name: ${newObject.name}%0D%0A
         Email: ${newObject.email}%0D%0A
