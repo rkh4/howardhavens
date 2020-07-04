@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
-export const colours = {
+interface ColoursProps {
+    orange: string,
+    white: string,
+    darkGrey: string,
+    lightGrey: string
+}
+
+export const colours: ColoursProps = {
     orange: "#E78200",
     white: "#FFFFFF",
     darkGrey: "#707070",

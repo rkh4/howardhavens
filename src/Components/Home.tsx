@@ -29,6 +29,9 @@ export const Section = styled.div`
         width: 1700px;
         margin: auto;
     }
+    @media(max-width: 1100px) {
+        padding: 20px;
+    }
 `;
 
 const LandingSection = styled.div`

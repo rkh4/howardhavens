@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Section } from "./Home";
 import { colours } from "../Shared/SharedStyles";
-import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -33,16 +32,46 @@ const LinksContainer = styled.div`
   flex-wrap: wrap;
   max-width: 1000px;
   justify-content: space-between;
+
+  @media(max-width: 1100px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
+
+interface LinkProps {
+  active?: boolean;
+}
 
 const Link = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 20px;
+  padding: 10px 18px 14px 0;
+  border: 3px solid transparent;
+  border-radius: 22px;
+  cursor: pointer;
+  margin: 10px;
+  background: ${(p: LinkProps): string => p.active ? "#fff" : "transparent"};
+  color: ${(p: LinkProps): string => p.active ? colours.orange : colours.white};
+  font-weight: 400;
+
+  & > div {
+    background: ${(p: LinkProps): string => p.active ? colours.orange : colours.white};
+  }
+
+  &:hover {
+    border-color: ${colours.white};
+  }
 
   &:nth-child(even) {
     flex-direction: row-reverse;
+    padding-left: 20px;
+  }
+
+  @media(max-width: 1100px) {
+    flex-direction: row !important;
   }
 `;
 
@@ -66,10 +95,6 @@ const Column = styled.div`
     width: 100%;
   }
 `;
-
-interface FormItemProps {
-  doubleHeight?: boolean;
-}
 
 const FormItem = styled.input`
     width: 100%;
@@ -121,17 +146,11 @@ const Icon = styled.div`
   margin: 7px 15px 0px;
 `;
 
-interface formProps {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-}
 
 const Contact: React.FC = () => {
-  
-  function handleSubmit(event: any) {
+  const [activeLink, setActiveLink] = useState("");
+
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     const data = new FormData(event.target);
     
@@ -143,7 +162,7 @@ const Contact: React.FC = () => {
     console.dir(json);
 
     window.open(
-      `mailto:contact@howardhavens.co.uk
+      `mailto:${(activeLink !== "" && activeLink) || "Contact"}@howardhavens.co.uk
         ?subject=${newObject.subject}
         &body=%0D%0A
         Name: ${newObject.name}%0D%0A
@@ -155,7 +174,6 @@ const Contact: React.FC = () => {
     );
   }
 
-
   return (
     <Section background={colours.orange}>
         <Container>
@@ -163,19 +181,19 @@ const Contact: React.FC = () => {
           <SubHeader>Please get in touch today if you have any questions, are interested in any of our services - or are looking for hassle free solutions to your property needs!</SubHeader>
 
           <LinksContainer>
-            <Link>
+            <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>
               <Icon></Icon>
               Lettings@howardhavens.co.uk
             </Link>
-            <Link>
+            <Link active={activeLink === "Projects"} onClick={() => setActiveLink("Projects")}>
               <Icon></Icon>
               Projects@howardhavens.co.uk
             </Link>
-            <Link>
+            <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
               <Icon></Icon>
               Sourcing@howardhavens.co.uk
             </Link>
-            <Link>
+            <Link active={activeLink === "Contact"} onClick={() => setActiveLink("Contact")}>
               <Icon></Icon>
               Contact@howardhavens.co.uk
             </Link>
