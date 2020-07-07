@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Section } from "./Home";
 import { colours } from "../Shared/SharedStyles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome, faHammer, faSearchLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Container = styled.div`
   width: 100%;
@@ -68,10 +70,12 @@ const Link = styled.div`
   &:nth-child(even) {
     flex-direction: row-reverse;
     padding-left: 20px;
+    padding-right: 5px;
   }
 
   @media(max-width: 1100px) {
     flex-direction: row !important;
+    padding: 10px 18px 14px 0 !important;
   }
 `;
 
@@ -138,11 +142,10 @@ const SubmitButton = styled.input`
   }
 `;
 
-const Icon = styled.div`
+const Icon = styled(FontAwesomeIcon)`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: ${colours.white};
   margin: 7px 15px 0px;
 `;
 
@@ -182,19 +185,19 @@ const Contact: React.FC = () => {
 
           <LinksContainer>
             <Link active={activeLink === "Lettings"} onClick={() => setActiveLink("Lettings")}>
-              <Icon></Icon>
+              <Icon icon={faHome} size="2x" />
               Lettings@howardhavens.co.uk
             </Link>
             <Link active={activeLink === "Projects"} onClick={() => setActiveLink("Projects")}>
-              <Icon></Icon>
+              <Icon icon={faHammer} size="2x"/>
               Projects@howardhavens.co.uk
             </Link>
             <Link active={activeLink === "Sourcing"} onClick={() => setActiveLink("Sourcing")}>
-              <Icon></Icon>
+              <Icon icon={faSearchLocation} size="2x"/>
               Sourcing@howardhavens.co.uk
             </Link>
             <Link active={activeLink === "Contact"} onClick={() => setActiveLink("Contact")}>
-              <Icon></Icon>
+              <Icon icon={faEnvelope} size="2x"/>
               Contact@howardhavens.co.uk
             </Link>
           </LinksContainer>
